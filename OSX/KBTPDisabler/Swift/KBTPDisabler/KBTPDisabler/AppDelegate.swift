@@ -14,7 +14,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var menu: NSMenu!
     
     @IBOutlet weak var window: NSWindow!
-
+    
+    var kbDisabled : Bool = false
+    var tpDisabled : Bool = false
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
     
@@ -31,11 +33,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func disableTrackPadClicked(sender: NSMenuItem) {
+        tpDisabled = true
     }
     
     @IBAction func disableKBClicked(sender: NSMenuItem) {
-        
+        kbDisabled = true
     }
+    
+    //handle and trap the event somehow
 
 }
 
